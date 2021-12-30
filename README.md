@@ -35,3 +35,9 @@ Il est aussi de lancer ces tests cypress de manière intéractive avec la comman
 ```
 yarn cuke:open
 ```
+
+### `yarn test`
+
+```
+yarn cy-ct:run && yarn cuke:run
+```
