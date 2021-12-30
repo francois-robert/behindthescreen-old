@@ -19,10 +19,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cypress run-ct",
-    "test:i": "cypress open-ct",
-    "cucumber": "cypress run",
-    "cucumber:i": "cypress open"
+    "cy-ct:run": "cypress run-ct",
+    "cy-ct:open": "cypress open-ct",
+    "cuke:run": "start-server-and-test 'cross-env PORT=3006 react-scripts start' 3006 'yarn cypress run'",
+    "cuke:open": "start-server-and-test 'cross-env PORT=3006 react-scripts start' 3006 'yarn cypress open'",
+    "test": "yarn cy-ct:run && yarn cuke:run"
   },
   "eslintConfig": {
     "extends": [
@@ -46,8 +47,10 @@
     "@cypress/react": "^5.12.0",
     "@cypress/webpack-dev-server": "^1.8.0",
     "@types/cypress-cucumber-preprocessor": "^4.0.1",
+    "cross-env": "^7.0.3",
     "cypress": "^9.2.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
+    "start-server-and-test": "^1.14.0",
     "webpack": "^5.65.0"
   },
   "cypress-cucumber-preprocessor": {
@@ -58,6 +61,5 @@
       "filePrefix": "",
       "fileSuffix": ".cucumber"
     }
-
   }
 }
