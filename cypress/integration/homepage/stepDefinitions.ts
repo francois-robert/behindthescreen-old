@@ -4,6 +4,6 @@ Given(/I am on the homepage/, () => {
     cy.visit('/');
 })
 
-Then(/I should see the the react logo/, () => {
-    cy.get('img[class="App-logo"]').should('be.visible');
+Then(/I should see behindthescreen's logo/, () => {
+    cy.get('svg[class="SvgLogo"]').should('be.visible');
 })
