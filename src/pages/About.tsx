@@ -1,8 +1,8 @@
-import TopBar from "../components/TopBar";
+import TopBar from "../components/topbar/TopBar";
 
 const About = () => {
     return (
-        <div>
+        <div data-cy="about">
             <TopBar/>
             <h1>A propos</h1>
             <br/>

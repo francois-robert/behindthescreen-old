@@ -1,8 +1,8 @@
-import TopBar from "../components/TopBar";
+import TopBar from "../components/topbar/TopBar";
 
 const NotFound = () => {
     return (
-        <div>
+        <div data-cy="not-found">
             <TopBar/>
             <h1>Erreur 404</h1>
         </div>

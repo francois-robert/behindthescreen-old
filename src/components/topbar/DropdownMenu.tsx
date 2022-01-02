@@ -2,11 +2,7 @@ import { Box, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
-const pages = [
-    {name: "Dashboard", path: "/"},
-    {name: "Personnages", path: "/characters"}
-]
+import { menuLinks } from './menuLinks';
 
 const DropdownMenu = (props: { sx: any; }) => {
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -22,6 +18,7 @@ const DropdownMenu = (props: { sx: any; }) => {
     return (
         <Box sx={Object.assign({ flexGrow: 1, alignItems: 'center' }, props.sx)}>
             <IconButton
+            id="button-appbar"
             size="large"
             aria-label="account of current user"
             aria-controls="menu-appbar"
@@ -49,15 +46,20 @@ const DropdownMenu = (props: { sx: any; }) => {
                 display: { xs: 'block', md: 'none' },
             }}
             >
-            {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                    <NavLink exact to={page.path} style={{textDecoration:"none"}}><Typography textAlign="center">{page.name}</Typography></NavLink>
-                </MenuItem>
+            {menuLinks.map((page) => (
+                <NavLink exact to={page.path} style={{textDecoration:"none"}}>
+                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page.name}</Typography>
+                    </MenuItem>
+                </NavLink>
             ))}
             </Menu>
         </Box>
     );
 };
+
+DropdownMenu.defaultProps = {sx : {display: "flex"}}
+
 
 export default DropdownMenu;
 

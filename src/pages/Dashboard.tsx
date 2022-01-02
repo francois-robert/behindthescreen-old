@@ -1,12 +1,11 @@
 import TopBar from "../components/topbar/TopBar";
 
-
-const Characters = () => {
+const Dashboard = () => {
     return (
-        <div data-cy="characters">
+        <div data-cy="dashboard">
             <TopBar/>
         </div>
-    )
-}
+    );
+};
 
-export default Characters;
+export default Dashboard;
